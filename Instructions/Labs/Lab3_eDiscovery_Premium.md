@@ -30,20 +30,19 @@ Your task is to create and manage eDiscovery cases that meet the investigation c
 To export files, you need specific permissions due to the direct access this option grants to user files.
 
 1. In Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in.
-1. Select the **Settings** card.
-
-   If you don't see the **Settings** card, select **View all solutions** and select the **Settings** card under the **Core** section.
-
+1. Select the **Settings** from the left navigation pane.
 1. On the left navigation pane, expand **Roles and scopes** and select **Role groups**.
 1. On the **Role groups for Microsoft Purview solutions** select **eDiscovery Manager**.
 1. On the **eDiscovery Manager** fly-out page on the right, select **Edit**.
 1. On the **Manage eDiscovery Manager** page, select **Choose users**.
-1. On the **Choose users** fly-out page on the right, select the user you will be using to conduct this interactive exercise, then select **Select**.
+1. On the **Choose users** fly-out page on the right, select the user you will be using to conduct the eDiscovery investigation in the next steps, then select **Select**.
+
+    >**Note**: Ensure you select the user that will be reviewing data and exporting search results.
+
 1. Back on the **Manage eDiscovery Manager** page, select **Next**.
 1. On the **Manage eDiscovery Administrator** page, select **Next**.
 1. On the **Review the role group and finish** page, select **Save** to add your user to the eDiscovery Manager role group.
 1. Once you've successfully added the users, select **Done** on the **You successfully updated the role group** page.
-1. Select **Home** to navigate back to the home page of the Microsoft Purview Portal.
 
 You have successfully granted the eDiscovery Manager permission.
 
@@ -51,19 +50,17 @@ You have successfully granted the eDiscovery Manager permission.
 
 Now that you have the necessary permissions, you can create a new eDiscovery case to begin your investigation.
 
-1. You should be on the home page of the Microsoft Purview Portal.
+1. In Microsoft Purview, select **Solutions** > **eDiscovery**.
 
-   If not, in Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in.
+   This will take you directly to the **Classic** experience of **eDiscovery (Premium)**.
 
-1. Select **View all solutions**.
-1. Under **Risk & Compliance** select the **eDiscovery** card.
-1. From the left navigation pane, expand **Premium cases**, then select **Cases**.
-1. On the **eDiscovery (Premium)** page, select **+ Create a case**.
+1. On the **eDiscovery (Premium)** page, select the tab for **Cases**, then select **+ Create a case**.
 1. On the **Name your case** fly-out page on the right, enter:
 
    - **Name**: `Legal Investigation 2024`
    - **Description**: `eDiscovery case for the 2024 legal investigation involving relevant emails and documents.`
 
+1. Select **Next**.
 1. On the **Add team members and configure settings** page, ensure to add the user that will be conducting the investigation, and select **Next**.
 1. On the **Review your case** page, select **Submit**, then select **Done**.
 
@@ -74,9 +71,6 @@ You have successfully created a new eDiscovery case named _Legal Investigation 2
 Now that your case is created, you need to add custodians. Custodians are individuals who might possess relevant information for the investigation.
 
 1. After creating the case in the previous task, you should be in the **Overview** tab of the **Legal Investigation 2024** case.
-
-   If not, in Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in. Select the **eDiscovery** card under the **Risk & Compliance** section. Select **Premium Cases** > **Cases** and select the newly created **Legal Investigation 2024** case.
-
 1. Select the **Data sources** tab from the top navigation, then select **Add data source** > **Add new custodians**.
 1. On the **New custodian** fly-out page, under **Select custodian** add custodians to your case, then select **Next**.
 1. On the **Hold settings** page, ensure the custodians you added in the previous step are selected to place on hold.
@@ -89,9 +83,6 @@ You have successfully added custodians to the _Legal Investigation 2024_ case.
 With custodians added, you can now run a collection estimate to get an overview of the data volume and relevance.
 
 1. After adding custodians to the case in the previous task, you should still be in the **Data sources** tab of the **Legal Investigation 2024** case.  
-
-   If not, in Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in. Select the **eDiscovery** card under the **Risk & Compliance** section. Select **Premium Cases** > **Cases** and select the newly created **Legal Investigation 2024** case.
-
 1. Select the **Collections** tab from the top navigation, then select **+ New collection**.
 1. In the **New collection** configuration, give the collection a **Name and description**. Enter:
 
@@ -112,6 +103,10 @@ With custodians added, you can now run a collection estimate to get an overview 
 1. On the **Define your search query** page, use the query builder to build a search  to find content relevant to the case:
 
    - Use the **AND** operator to search for **Keywords** that are **Equal** to `legal`.
+
+    >**Note**: You might need to delete the option to **Select a filter** after creating the search query to find keywords that equal **legal**. If this option is present, it prevents you from adding the subgroup in the next step.
+    >![Screenshot showing the query builder in eDiscovery Premium.](./Media/ediscovery-subgroup-bug.png)
+
    - Select **Add a subgroup**.
    - Use the **OR** operator to search for **Keywords** that are **Equal** to `contract`.
 
@@ -141,9 +136,6 @@ You have successfully created and reviewed a collection named _Legal Data Collec
 Once the collection is satisfactory, commit it to a review set for detailed analysis.
 
 1. After creating the collection estimate in the previous task, you should still be in the **Collections** tab of the **Legal Investigation 2024** case.  
-
-   If not, in Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in. Select the **eDiscovery** card under the **Risk & Compliance** section. Select **Premium Cases** > **Cases** > **Legal Investigation 2024** > **Collections** tab.
-
 1. Select the **Legal Data Collection** collection.
 1. On the **Legal Data Collection** fly-out page on the right, select **Commit collection**.
 1. On the **Commit items to a review set** page, ensure the **Add to new review set** option is selected, and name it `Legal Case Review`.
@@ -154,9 +146,6 @@ You have successfully committed the collection to a review set.
 ## Task 6 – Explore the review set
 
 1. After committing the collection to a review set in the previous task, you should still be in the **Collections** tab of the **Legal Investigation 2024** case.
-
-   If not, in Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in. Select the **eDiscovery** card under the **Risk & Compliance** section. Select **Premium Cases** > **Cases** > **Legal Investigation 2024**.
-
 1. Select the **Review sets** tab from the top navigation, then select the newly created **Legal Case Review** review set.
 1. On the **Legal Case Review** fly-out page on the right, select **Open review set** at the bottom of the page.
 1. Explore what you can do with items in your review set:
@@ -180,9 +169,6 @@ You have successfully opened and reviewed your review set.
 To save your work and enable further analysis, you will export the search results.
 
 1. You should still be in the **Legal Case Review** review set in eDiscovery (Premium).
-
-   If not, in Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in. Select the **eDiscovery** card under the **Risk & Compliance** section. Select **Premium Cases** > **Cases** > **Legal Investigation 2024** > **Review set** tab > **Legal Case Review**.
-
 1. Select the checkbox next to the items you wish to export for further analysis.
 1. Select the drop down for **Actions** > **Export**.
 
